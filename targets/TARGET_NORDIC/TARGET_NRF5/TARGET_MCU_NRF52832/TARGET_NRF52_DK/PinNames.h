@@ -132,10 +132,10 @@ typedef enum {
     BUTTON3 = p15,
     BUTTON4 = p16,
 
-    RX_PIN_NUMBER  = p8,
-    TX_PIN_NUMBER  = p6,
-    CTS_PIN_NUMBER = p7,
-    RTS_PIN_NUMBER = p5,
+    RX_PIN_NUMBER  = p30,//p8,
+    TX_PIN_NUMBER  = p29,//p6,
+    CTS_PIN_NUMBER = p28,//p7,
+    RTS_PIN_NUMBER = p2,//p5,
 
     // mBed interface Pins
     USBTX = TX_PIN_NUMBER,
@@ -185,6 +185,7 @@ typedef enum {
     A4 = p30,
     A5 = p31,
 
+	InternalVCC = p9,
     // Not connected
     NC = (int)0xFFFFFFFF
 } PinName;

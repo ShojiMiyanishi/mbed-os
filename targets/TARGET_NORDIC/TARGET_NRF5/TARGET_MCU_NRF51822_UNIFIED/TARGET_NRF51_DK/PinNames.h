@@ -183,6 +183,7 @@ typedef enum {
     A4  = p5,
     A5  = p6,
 
+	InternalVCC = p0,
     // Not connected
     NC = (int)0xFFFFFFFF
 } PinName;

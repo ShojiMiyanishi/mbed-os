@@ -319,6 +319,10 @@ __STATIC_INLINE nrf_saadc_input_t nrf_drv_saadc_gpio_to_ain(uint32_t pin)
     {
         return (nrf_saadc_input_t)(pin - 24 + 1);
     }
+    else if (9 == pin)
+    {
+        return (nrf_saadc_input_t)(9);
+    }
     else
     {
         return NRF_SAADC_INPUT_DISABLED;

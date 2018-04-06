@@ -23,6 +23,7 @@
 #define ADC_RANGE    ADC_10BIT_RANGE
 
 static const PinMap PinMap_ADC[] = {
+    {P0_0, ADC0_0, 0},//vcc. p0 is dummy
     {P0_1, ADC0_0, 4},
     {P0_2, ADC0_0, 8},
     {P0_3, ADC0_0, 16},

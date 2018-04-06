@@ -64,7 +64,13 @@ void analogin_init(analogin_t *obj, PinName pin)
     
     nrf_saadc_channel_config_t channel_config =
             NRF_DRV_SAADC_DEFAULT_CHANNEL_CONFIG_SE(saadcIn); //Single ended, negative input to ADC shorted to GND.
-    
+
+    if(pin==9){
+    	channel_config.pin_p = NRF_SAADC_INPUT_DISABLED;
+    	//channel_config.resistor_p = NRF_SAADC_RESISTOR_PULLUP;
+    	channel_config.resistor_p = NRF_SAADC_RESISTOR_VDD1_2;
+
+    }
     ret_code = nrf_drv_saadc_channel_init(obj->adc_pin, &channel_config);
     MBED_ASSERT(ret_code == NRF_SUCCESS);
 }
@@ -117,6 +123,10 @@ __STATIC_INLINE nrf_saadc_input_t nrf_drv_saadc_gpio_to_ain(uint32_t pin)
     else if (pin >= 28 && pin <= 31)
     {
         return (nrf_saadc_input_t)(pin - 24 + 1);
+    }
+    else if (9 == pin)
+    {
+        return (nrf_saadc_input_t)(9);
     }
     else
     {
